@@ -11,7 +11,7 @@ export const CarProvider = ({ children }) => {
   const fetchCars = async () => {
     try {
       const response = await axios.get(
-        "https://mern-carweb-server.onrender.com//get-cars"
+        "https://mern-carweb-server.onrender.com/get-cars"
       );
       setCars(response.data);
       console.log("Cars: ", response.data);
@@ -23,7 +23,7 @@ export const CarProvider = ({ children }) => {
   const fetchSpecificCar = async (id) => {
     try {
       const res = await axios.get(
-        `https://mern-carweb-server.onrender.com//car/${id}`
+        `https://mern-carweb-server.onrender.com/car/${id}`
       );
       setSpecificCar(res.data.car);
     } catch (err) {

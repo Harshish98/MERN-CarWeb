@@ -48,7 +48,7 @@ export const ContactForm = () => {
   }
   return (
     <>
-      <div className="flex justify-between mb-5">
+      <div className="md:flex text-sm md:text-base justify-between mb-5">
         <div>
           <label>Name</label>
           <input
@@ -56,7 +56,7 @@ export const ContactForm = () => {
             value={contactDetails.name}
             type="text"
             placeholder="Full Name"
-            className="block w-80 py-3 px-4 text-lg bg-blue-2 rounded capitalize"
+            className="block w-full md:w-[360px] lg:w-[270px] xl:w-80 py-3 px-4 md:text-lg bg-blue-2 rounded capitalize"
             onChange={handleOnChange}
           />
         </div>
@@ -67,12 +67,12 @@ export const ContactForm = () => {
             value={contactDetails.email}
             type="email"
             placeholder="email@mail.com"
-            className="block w-80 py-3 px-4 text-lg bg-blue-2 rounded"
+            className="block w-full md:w-[360px] lg:w-[270px] xl:w-80 py-3 px-4 md:text-lg bg-blue-2 rounded"
             onChange={handleOnChange}
           />
         </div>
       </div>
-      <div className="flex justify-between mb-5">
+      <div className="md:flex justify-between mb-5">
         <div>
           <label>Phone</label>
           <input
@@ -80,7 +80,7 @@ export const ContactForm = () => {
             value={contactDetails.phone}
             type="tel"
             placeholder="(000) 000-0000"
-            className="block w-80 py-3 px-4 text-lg bg-blue-2 rounded"
+            className="block w-full md:w-[360px] lg:w-[270px] xl:w-80 py-3 px-4 md:text-lg bg-blue-2 rounded"
             onChange={handleOnChange}
           />
         </div>
@@ -89,7 +89,7 @@ export const ContactForm = () => {
           <select
             name="subject"
             value={contactDetails.subject}
-            className="block w-80 py-3 px-4 text-lg bg-blue-2 rounded"
+            className="block w-full md:w-[360px] lg:w-[270px] xl:w-80 py-3 px-4 md:text-lg bg-blue-2 rounded"
             onChange={handleOnChange}
           >
             <option>Subject</option>
@@ -102,14 +102,14 @@ export const ContactForm = () => {
       <textarea
         name="message"
         value={contactDetails.message}
-        className="block w-full py-3 px-4 text-lg bg-blue-2 rounded mb-12"
+        className="block w-full py-3 px-4 md:text-lg bg-blue-2 rounded mb-12"
         placeholder="Leave a message here"
         onChange={handleOnChange}
         rows={5}
       />
       <button
         onClick={handleSubmit}
-        className="bg-blue-1 w-full text-lg py-3 rounded"
+        className="bg-blue-1 w-full md:text-lg py-3 rounded"
       >
         Contact Dealer
       </button>

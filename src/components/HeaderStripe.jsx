@@ -10,12 +10,12 @@ export const HeaderStripe = () => {
   return (
     <>
       <div
-        className={`bg-blue-2 flex justify-between text-white py-4 px-28 absolute -bottom-15 w-full z-10 ${
+        className={`bg-blue-2 flex justify-between text-white text-sm md:text-base py-2 md:py-4 px-2 md:px-16 lg:px-28 absolute -bottom-15 w-full z-10 ${
           homePageShown ? "opacity-85" : "opacity-100"
         }`}
       >
         {homePageShown ? (
-          <select className="bg-transparent">
+          <select className="bg-transparent capitalize">
             <option>buy & sell used cars</option>
           </select>
         ) : (

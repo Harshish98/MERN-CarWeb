@@ -127,7 +127,7 @@ export const FilterPane = () => {
 
   return (
     <>
-      <div className="w-96 h-fit bg-primary rounded p-4 text-white">
+      <div className="xl:w-96 h-fit bg-primary rounded p-4 text-white">
         <div className="mb-5 border-b text-xl p-2">Filter</div>
         <div className="space-y-4">
           <div>

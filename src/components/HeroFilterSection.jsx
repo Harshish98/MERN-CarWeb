@@ -99,9 +99,9 @@ export const HeroFilterSection = () => {
   };
 
   return (
-    <div className="w-3/4 mx-auto bg-primary p-5 border border-blue-1 text-white absolute -bottom-20 left-48 space-y-4">
-      <div className="flex justify-between">
-        <div className="w-[476px]">
+    <div className="md:w-5/6 lg:w-3/4 bg-primary py-3 px-4 lg:p-5 border border-blue-1 text-white md:absolute -bottom-20 left-16 lg:left-32 xl:left-48 space-y-6">
+      <div className="md:flex justify-between space-y-5 md:space-y-0">
+        <div className="xl:w-[476px]">
           <TextField
             value={searchKeyword}
             onChange={(e) => setSearchKeyword(e.target.value)}
@@ -121,59 +121,64 @@ export const HeroFilterSection = () => {
             style={styles.select}
           />
         </div>
-        <div className="w-[234px]">
-          <Select
-            multiple
-            displayEmpty
-            value={brands}
-            onChange={handleBrandChange}
-            input={<OutlinedInput />}
-            renderValue={(selected) =>
-              selected.length === 0 ? "Brand" : selected.join(", ")
-            }
-            MenuProps={{
-              PaperProps: {
-                style: styles.menu,
-              },
-            }}
-            style={styles.select}
-          >
-            {Array.from(new Set(cars.map((car) => car.brand))).map((val) => (
-              <MenuItem key={val} value={val}>
-                <Checkbox checked={brands.indexOf(val) > -1} />
-                <ListItemText primary={val} className="capitalize" />
-              </MenuItem>
-            ))}
-          </Select>
-        </div>
-        <div className="w-[234px]">
-          <Select
-            multiple
-            displayEmpty
-            value={modelName}
-            onChange={handleModelChange}
-            input={<OutlinedInput />}
-            renderValue={(selected) =>
-              selected.length === 0 ? "Model" : selected.join(", ")
-            }
-            MenuProps={{
-              PaperProps: {
-                style: styles.menu,
-              },
-            }}
-            style={styles.select}
-          >
-            {models.map((val) => (
-              <MenuItem key={val} value={val}>
-                <Checkbox checked={modelName.indexOf(val) > -1} />
-                <ListItemText primary={val} />
-              </MenuItem>
-            ))}
-          </Select>
+        <div className="flex justify-between md:gap-3">
+          <div className="w-48 md:w-40 lg:w-52 xl:w-[234px]">
+            <Select
+              multiple
+              displayEmpty
+              value={brands}
+              onChange={handleBrandChange}
+              input={<OutlinedInput />}
+              renderValue={(selected) =>
+                selected.length === 0 ? "Brand" : selected.join(", ")
+              }
+              MenuProps={{
+                PaperProps: {
+                  style: styles.menu,
+                },
+              }}
+              style={styles.select}
+            >
+              {Array.from(new Set(cars.map((car) => car.brand))).map((val) => (
+                <MenuItem key={val} value={val}>
+                  <Checkbox checked={brands.indexOf(val) > -1} />
+                  <ListItemText primary={val} className="capitalize" />
+                </MenuItem>
+              ))}
+            </Select>
+          </div>
+          <div className="w-48 md:w-40 lg:w-52 xl:w-[234px]">
+            <Select
+              multiple
+              displayEmpty
+              value={modelName}
+              onChange={handleModelChange}
+              input={<OutlinedInput />}
+              renderValue={(selected) =>
+                selected.length === 0 ? "Model" : selected.join(", ")
+              }
+              MenuProps={{
+                PaperProps: {
+                  style: styles.menu,
+                },
+              }}
+              style={styles.select}
+            >
+              {models.map((val) => (
+                <MenuItem key={val} value={val}>
+                  <Checkbox checked={modelName.indexOf(val) > -1} />
+                  <ListItemText primary={val} />
+                </MenuItem>
+              ))}
+            </Select>
+          </div>
         </div>
       </div>
-      <div className="flex justify-between items-center">
-        <div className="w-[355px]">
+      <div className="md:flex justify-between gap-4 items-center">
+        <div
+          className="
+        w-68 xl:w-[355px] mb-7 md:mb-0"
+        >
           <TextField
             variant="outlined"
             placeholder="Enter location"
@@ -190,9 +195,9 @@ export const HeroFilterSection = () => {
             style={styles.select}
           />
         </div>
-        <div className="w-[427px] flex gap-4">
-          <p className="text-lg">Price Range</p>
-          <div className="w-[264px]">
+        <div className="md:w-[427px] flex gap-8 md:gap-3 xl:gap-4">
+          <p className="text-sm xl:text-lg">Price Range</p>
+          <div className="w-56 xl:w-[264px]">
             <Slider
               value={priceRange}
               onChange={(e) => setPriceRange(e.target.value)}
@@ -219,7 +224,7 @@ export const HeroFilterSection = () => {
         </div>
         <button
           onClick={handleSearch}
-          className="bg-blue-1 h-12 w-40 rounded font-semibold"
+          className="bg-blue-1 h-12 w-full md:w-32 xl:w-40 rounded font-semibold"
         >
           Search
         </button>

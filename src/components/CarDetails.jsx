@@ -18,7 +18,7 @@ export const CarDetails = () => {
   return (
     <>
       <div className="pt-14 pb-10">
-        <div className="mb-20">
+        <div className="mb-10 md:mb-20">
           {specificCar.images && specificCar.images.length > 0 ? (
             <CarCarousel
               images={specificCar.images.map(
@@ -30,21 +30,26 @@ export const CarDetails = () => {
             <p>No images available</p>
           )}
         </div>
-        <div className="flex gap-28 w-max mx-auto mb-16">
-          <div className="w-[664px] space-y-16">
+        <div className="lg:hidden text-center text-blue-1 border border-blue-1 py-3 text-lg font-bold mx-4 rounded mb-10">
+          ${specificCar.price}
+        </div>
+        <div className="lg:flex lg:gap-8 xl:gap-28 px-2 xl:w-max mx-auto mb-16">
+          <div className="w-full xl:w-[664px] space-y-10 md:space-y-16">
             <div>
-              <h2 className="text-lg mb-6 font-bold">Description</h2>
-              <p>{specificCar.description}</p>
+              <h2 className="md:text-lg mb-3 md:mb-6 font-bold">Description</h2>
+              <p className="text-sm md:text-base">{specificCar.description}</p>
             </div>
             <div>
-              <h2 className="text-lg mb-6 font-bold">Feature</h2>
+              <h2 className="md:text-lg mb-3 md:mb-6 font-bold">Feature</h2>
               <div className="flex gap-3 flex-wrap">
                 {specificCar &&
                   specificCar.features?.map((feature, index) => (
-                    <p className="bg-blue-2 w-fit p-4 rounded text-lg flex items-center gap-1 capitalize">
+                    <p
+                      key={index}
+                      className="bg-blue-2 w-fit p-2 md:p-4 rounded text-sm md:text-lg flex items-center gap-1 capitalize"
+                    >
                       <svg
-                        width="22"
-                        height="22"
+                        className="w-4 md:w-5"
                         viewBox="0 0 22 22"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -67,13 +72,13 @@ export const CarDetails = () => {
               </div>
             </div>
             <div>
-              <h2 className="text-lg mb-6 font-bold">Dealer Info</h2>
-              <div className="h-[88px] bg-primary flex justify-between text-lg p-4">
-                <div className="flex items-center border-r basis-1/3">
-                  <SignInIcon width={45} height={45} />
+              <h2 className="md:text-lg mb-3 md:mb-6 font-bold">Dealer Info</h2>
+              <div className="md:h-[88px] bg-primary flex justify-between text-sm md:text-lg p-1 py-3 md:p-4 rounded">
+                <div className="flex items-center border-r md:basis-1/3">
+                  <SignInIcon width={35} height={35} />
                   <p>Dealer Name</p>
                 </div>
-                <div className="flex gap-1 items-center border-r basis-1/3 pl-4">
+                <div className="flex gap-1 items-center border-r basis-1/3 pl-2 md:pl-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -88,7 +93,7 @@ export const CarDetails = () => {
                   </svg>
                   <p>000-000-0000</p>
                 </div>
-                <div className="flex gap-1 items-center pl-4 basis-1/3">
+                <div className="flex gap-1 items-center pl-2 md:pl-4 basis-1/3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -103,29 +108,30 @@ export const CarDetails = () => {
               </div>
             </div>
             <div>
-              <h2 className="text-lg mb-6 font-bold">Contact</h2>
+              <h2 className="md:text-lg mb-3 md:mb-6 font-bold">Contact</h2>
               <ContactForm car={specificCar.carName} />
             </div>
             <div>
-              <h2 className="text-lg mb-6 font-bold">Location</h2>
+              <h2 className="md:text-lg mb-3 md:mb-6 font-bold">Location</h2>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.2964633622355!2d72.9958718748724!3d26.25203998817136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418dbbfd1e97f1%3A0x636a2913850b2be7!2sOILAB%20LEARNING%20INSTITUTE!5e0!3m2!1sen!2sin!4v1720465626445!5m2!1sen!2sin"
-                width="664"
-                height="323"
-                allowfullscreen=""
+                allowFullScreen=""
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-52 md:h-[323px]"
               ></iframe>
             </div>
           </div>
-          <div className="w-[395px] space-y-16">
-            <div className="text-center text-blue-1 border border-blue-1 py-4 text-lg font-bold">
+          <div className="xl:w-[395px] space-y-16">
+            <div className="hidden lg:block text-center text-blue-1 border border-blue-1 py-4 text-lg font-bold">
               ${specificCar.price}
             </div>
-            <div className="bg-primary p-6 space-y-12">
+            <div className="bg-primary p-6 lg:space-y-12 md:grid grid-cols-2 lg:block gap-x-8">
               <div>
-                <h2 className="text-lg mb-3">Car Details</h2>
-                <div className="border-b pb-4 capitalize">
+                <h2 className="text-lg mb-3 md:text-center lg:text-left">
+                  Car Details
+                </h2>
+                <div className="lg:border-b pb-4 capitalize">
                   <p className="inline-block w-3/5 text-[#A9A9A9]">Brand</p>
                   <p className="inline-block w-2/5 text-right">
                     {specificCar.brand}
@@ -169,8 +175,10 @@ export const CarDetails = () => {
                 </div>
               </div>
               <div>
-                <h2 className="text-lg mb-3">Engine</h2>
-                <div className="border-b pb-4 capitalize">
+                <h2 className="text-lg mb-3 md:text-center lg:text-left">
+                  Engine
+                </h2>
+                <div className="lg:border-b pb-4 capitalize">
                   <p className="inline-block w-3/5 text-[#A9A9A9]">fuel type</p>
                   <p className="inline-block w-2/5 text-right">
                     {specificCar.fuelType}
@@ -199,8 +207,10 @@ export const CarDetails = () => {
               </div>
               {specificCar.fuelType === "Electric" ? (
                 <div>
-                  <h2 className="text-lg mb-3">Battery and Charging</h2>
-                  <div className="border-b pb-4">
+                  <h2 className="text-lg mb-3 md:text-center lg:text-left">
+                    Battery and Charging
+                  </h2>
+                  <div className="lg:border-b pb-4">
                     <p className="inline-block w-3/5 text-[#A9A9A9]">
                       Battery Capacity
                     </p>
@@ -229,8 +239,10 @@ export const CarDetails = () => {
                 </div>
               ) : null}
               <div>
-                <h2 className="text-lg mb-3">Dimension</h2>
-                <div className="border-b pb-4">
+                <h2 className="text-lg mb-3 md:text-center lg:text-left">
+                  Dimension
+                </h2>
+                <div className="lg:border-b pb-4">
                   <p className="inline-block w-3/5 text-[#A9A9A9]">Length</p>
                   <p className="inline-block w-2/5 text-right">
                     {specificCar.length} mm
@@ -254,30 +266,32 @@ export const CarDetails = () => {
             </div>
           </div>
         </div>
-        <div className="w-3/4 mx-auto">
-          <h2 className="text-lg mb-6 font-bold">Credit Simulation</h2>
-          <div className="p-6 flex gap-7">
-            <div className="text-lg">
-              <div className="flex justify-between gap-6">
+        <div className="lg:w-11/12 xl:w-3/4 md:mx-auto px-2 lg:px-0">
+          <h2 className="md:text-lg mb-3 md:mb-6 font-bold">
+            Credit Simulation
+          </h2>
+          <div className="xl:p-6 lg:flex space-y-4 lg:space-y-0 gap-7">
+            <div className="text-sm md:text-lg space-y-2 lg:space-y-0">
+              <div className="md:flex space-y-2 md:space-y-0 justify-between gap-6">
                 <div>
                   <label>Price</label>
                   <input
-                    className="py-3 px-4 text-lg bg-blue-2 rounded block w-[216px]"
+                    className="py-3 px-4 md:text-lg bg-blue-2 rounded block w-full md:w-[360px] lg:w-[216px]"
                     value={`$ ${specificCar.price}`}
                   />
                 </div>
                 <div>
                   <label>Interest Rate</label>
                   <input
-                    className="py-3 px-4 text-lg bg-blue-2 rounded block w-[216px]"
+                    className="py-3 px-4 md:text-lg bg-blue-2 rounded block w-full md:w-[360px] lg:w-[216px]"
                     value={"12%"}
                   />
                 </div>
               </div>
-              <div className="flex justify-between">
+              <div className="md:flex space-y-2 md:space-y-0 justify-between">
                 <div>
                   <label>Period in Months</label>
-                  <select className="py-3 px-4 text-lg bg-blue-2 rounded block w-[216px]">
+                  <select className="py-3 px-4 md:text-lg bg-blue-2 rounded block w-full md:w-[360px] lg:w-[216px]">
                     <option>12 Months</option>
                     <option>24 Months</option>
                   </select>
@@ -285,13 +299,13 @@ export const CarDetails = () => {
                 <div>
                   <label>Down Payment</label>
                   <input
-                    className="py-3 px-4 text-lg bg-blue-2 rounded block w-[216px]"
+                    className="py-3 px-4 md:text-lg bg-blue-2 rounded block w-full md:w-[360px] lg:w-[216px]"
                     value={""}
                   />
                 </div>
               </div>
             </div>
-            <div className="text-lg w-[664px] bg-blue-2 border border-blue-1 py-9">
+            <div className="md:text-lg lg:w-[664px] bg-blue-2 border border-blue-1 py-6 md:py-9 rounded">
               <p className="border-b-2 border-[#004A77] mb-0.5 py-1 w-fit mx-auto">
                 Monthly Payment
               </p>

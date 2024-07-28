@@ -42,14 +42,6 @@ function App() {
         />
         <Route />
       </Routes>
-      {/* <AddCar/> */}
-      {/* <AllCars/> */}
-      {/* <CarCard/> */}
-      {/* <Navbar/> */}
-      {/* <HeroSection/> */}
-      {/* <CarsPage/> */}
-      {/* <CarDetails/> */}
-      {/* <CarCarousel/> */}
       <Footer />
     </>
   );

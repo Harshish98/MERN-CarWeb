@@ -9,7 +9,7 @@ import { PrevArrowIcon } from "../icons/cars-page-icons/PrevArrowIcon";
 const NextArrow = ({ onClick }) => {
   return (
     <div
-      className="absolute top-1/2 right-2 transform -translate-y-1/2 z-10 cursor-pointer"
+      className="hidden md:block absolute top-1/2 right-2 transform -translate-y-1/2 z-10 cursor-pointer"
       onClick={onClick}
     >
       <NextArrowIcon />
@@ -21,7 +21,7 @@ const NextArrow = ({ onClick }) => {
 const PrevArrow = ({ onClick }) => {
   return (
     <div
-      className="absolute top-1/2 left-2 transform -translate-y-1/2 z-10 cursor-pointer"
+      className="hidden md:block absolute top-1/2 left-2 transform -translate-y-1/2 z-10 cursor-pointer"
       onClick={onClick}
     >
       <PrevArrowIcon />
@@ -33,11 +33,6 @@ const CarCarousel = ({images, video}) => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderRef = useRef(null);
-
-  useEffect(() => {
-    console.log("Images:", images);
-    console.log("Video:", video);
-  }, [images, video]);
 
   const settings = {
     dots: true,
@@ -65,23 +60,23 @@ const CarCarousel = ({images, video}) => {
             <img
               src={image}
               alt={`Car Image ${index + 1}`}
-              className="w-full h-[633px] object-cover"
+              className="w-full xl:h-[633px] object-cover"
             />
           </div>
         ))}
         <div>
-          <video controls className="w-full h-[633px]">
+          <video controls className="w-full xl:h-[633px]">
             <source src={video} type="video/mp4" />
           </video>
         </div>
       </Slider>
-      <div className="flex justify-center mt-5 gap-9">
+      <div className="flex justify-center mt-2 md:mt-4 lg:mt-5 gap-4 xl:gap-9">
         {images?.map((image, index) => (
           <img
             key={index}
             src={image}
             alt={`Thumbnail ${index + 1}`}
-            className={`w-36 mx-1 cursor-pointer ${
+            className={`w-12 md:w-24 lg:w-36 md:mx-1 cursor-pointer ${
               currentIndex === index ? "border-2 border-blue-500" : ""
             }`}
             onClick={() => handleThumbnailClick(index)}
@@ -89,7 +84,7 @@ const CarCarousel = ({images, video}) => {
         ))}
         <video
           controls
-          className={`w-24 mx-1 cursor-pointer ${
+          className={`w-12 md:w-24 mx-1 cursor-pointer ${
             currentIndex === images?.length ? "border-2 border-blue-500" : ""
           }`}
           onClick={() => handleThumbnailClick(images.length)}

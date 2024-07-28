@@ -18,14 +18,14 @@ export const CarCard = ({
     <>
       <div
         key={index}
-        className={`${list ? "w-full" : "w-[362px]"}  ${
+        className={`${list ? "w-fit xl:w-full" : "w-[348px] xl:w-[362px]"}  ${
           showEditButtons || list ? "h-fit" : "h-[471px]"
         }  border border-[#12232E] p-4 text-white mb-5 rounded`}
       >
         <div className={`${list ? "flex items-center justify-between" : null}`}>
           <Link to={`/car/${car._id}`}>
             <img
-              className={`h-[189px] ${
+              className={`md:h-[189px] ${
                 list ? "w-[322px]" : "w-full"
               }  rounded mb-3`}
               src={`https://mern-carweb-server.onrender.com/images/${car.images[0]}`}
@@ -49,10 +49,10 @@ export const CarCard = ({
             </div>
           ) : (
             <>
-              <div className="mt-7 space-y-3">
-                <p className="text-2xl text-blue-1 font-bold">${car.price}</p>
+              <div className="mt-4 md:mt-7 space-y-3">
+                <p className="text-xl md:text-2xl text-blue-1 font-bold">${car.price}</p>
                 <p>Florida, USA</p>
-                <div className="border-b border-[#989898] grid grid-cols-3 gap-y-4 pb-3">
+                <div className="border-b border-[#989898] grid grid-cols-3 gap-y-2 md:gap-y-4 pb-3">
                   <p className="flex items-center gap-1">
                     <CalenderIcon />
                     {car.year}

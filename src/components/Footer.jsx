@@ -5,21 +5,18 @@ export const Footer = () => {
   return (
     <>
       <div>
-        {/* <p className="text-4xl text-white py-3 text-center bg-blue-2">
-          HOMEGROWN INDIAN BRAND
-        </p> */}
-        <p className="text-center text-5xl py-4 text-blue-1 border-t border-blue-1">
+        <p className="text-center text-2xl md:text-5xl py-4 text-blue-1 border-t border-blue-1">
           Over <strong>4 Million</strong> Happy Customers
         </p>
         <div className="bg-secondary text-white py-8">
-          <div className="flex justify-around mb-8">
-            <div className="space-y-3 text-xl">
+          <div className="grid grid-cols-3 gap-y-6 px-5 md:flex md:justify-around mb-8">
+            <div className="space-y-3 lg:text-xl col-span-2">
               <p className="flex items-center gap-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="size-6"
+                  className="size-5 md:size-6"
                 >
                   <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
                   <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
@@ -31,7 +28,7 @@ export const Footer = () => {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="size-6"
+                  className="size-5 md:size-6"
                 >
                   <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
                   <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
@@ -43,7 +40,7 @@ export const Footer = () => {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="size-6"
+                  className="size-5 md:size-6"
                 >
                   <path
                     fillRule="evenodd"
@@ -54,7 +51,7 @@ export const Footer = () => {
                 +91-8523697411
               </p>
             </div>
-            <div className="space-y-1">
+            <div className="space-y-1 text-sm lg:text-base text-right md:text-left">
               <p className="text-lg uppercase font-semibold mb-3">Company</p>
               {/* <Link to="/about"> */}
               <p>About Us</p>
@@ -66,13 +63,13 @@ export const Footer = () => {
               {/* <p>Products</p> */}
               {/* </Link> */}
             </div>
-            <div className="space-y-1">
+            <div className="space-y-1 text-sm lg:text-base col-span-2">
               <p className="text-lg uppercase font-semibold mb-3">More Info</p>
               <p>Terms & Conditions</p>
               <p>Privacy Policy</p>
               <p>FAQ</p>
             </div>
-            <div className="space-y-1">
+            <div className="space-y-1 text-sm lg:text-base text-right md:text-left">
                 <p className="text-lg uppercase font-semibold mb-3">other</p>
                 <p>Inspection Process</p>
                 <p>Customer Reviews</p>

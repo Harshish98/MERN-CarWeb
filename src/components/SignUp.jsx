@@ -41,7 +41,7 @@ export const SignUp = () => {
         placeholder="Enter full name"
         value={items.name}
         onChange={handleChange}
-        className="focus:outline-none active:outline-none mb-5 w-full p-2 text-lg block bg-blue-2 rounded"
+        className="focus:outline-none active:outline-none mb-5 w-full p-2 lg:text-lg block bg-blue-2 rounded"
       />
       <input
         type="email"
@@ -49,7 +49,7 @@ export const SignUp = () => {
         placeholder="Enter email"
         value={items.email}
         onChange={handleChange}
-        className="focus:outline-none active:outline-none mb-5 w-full p-2 text-lg block bg-blue-2 rounded"
+        className="focus:outline-none active:outline-none mb-5 w-full p-2 lg:text-lg block bg-blue-2 rounded"
       />
       <input
         type="password"
@@ -57,10 +57,10 @@ export const SignUp = () => {
         placeholder="Enter password"
         value={items.password}
         onChange={handleChange}
-        className="focus:outline-none active:outline-none mb-5 w-full p-2 text-lg block bg-blue-2 rounded"
+        className="focus:outline-none active:outline-none mb-5 w-full p-2 lg:text-lg block bg-blue-2 rounded"
       />
       <button
-        className="w-5/6 text-blue-1 px-3 hover:text-white hover:bg-blue-1 rounded text-xl mx-auto block p-2 font-semibold mb-4 border border-blue-1"
+        className="w-5/6 text-blue-1 px-3 hover:text-white hover:bg-blue-1 rounded lg:text-xl mx-auto block p-2 font-semibold mb-4 border border-blue-1"
         onClick={handleSubmit}
       >
         Submit

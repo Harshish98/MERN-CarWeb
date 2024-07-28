@@ -21,12 +21,12 @@ export const AuthForm = ({ page }) => {
   };
   return (
     <>
-      <div className="flex justify-between items-center">
-        <div className="h-[800px] basis-3/5">
+      <div className="md:flex justify-between items-center">
+        <div className="h-96 md:h-[550px] lg:h-[800px] basis-3/5">
           <img className="h-full w-full" src="https://res.cloudinary.com/disvtxs51/image/upload/v1718602050/samples/ecommerce/car-interior-design.jpg" />
         </div>
-        <div className="basis-2/5 p-10">
-          <p className="text-3xl font-semibold text-white mb-10">
+        <div className="basis-2/5 p-4 lg:p-10">
+          <p className="text-2xl text-center md:text-3xl font-semibold text-white mb-6 lg:mb-10">
             {page === "login"
               ? "Log In to CarDrive"
               : page === "signup"
